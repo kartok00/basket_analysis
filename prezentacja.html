@@ -55,7 +55,7 @@
         }
         .reveal section {
             box-sizing: border-box;
-            padding: 8px 20px !important;
+            padding: 0px 20px 8px 20px !important;
             overflow: hidden;
         }
         .reveal h2 {
@@ -184,7 +184,7 @@
             <section style="">
                                 <h2>Przeprowadzenie analizy: Python</h2>
                                 <p style="font-size: 0.85em; margin: 6px 0 8px 0;"><strong>Biblioteki:</strong> pandas, mlxtend, seaborn/matplotlib</p>
-                                <pre><code class="language-python" style="font-size: 0.46em;">basket_vertical = (df.groupby(['purchase_id', 'vertical'])['vertical']
+                                <pre><code class="language-python" style="font-size: 0.65em;">basket_vertical = (df.groupby(['purchase_id', 'vertical'])['vertical']
                    .count().unstack().fillna(0)
                    .astype(bool))
 
@@ -399,7 +399,7 @@ result = care_rules.sort_values(by='lift', ascending=False).head(10)</code></pre
                     </div>
                 </div>
                 <h4 style="margin-top: 18px; color: #2c3e50;">SQL — kluczowy query:</h4>
-                                <pre><code class="language-sql" style="font-size: 0.38em;">WITH dane_pmd AS (
+                                <pre><code class="language-sql" style="font-size: 0.55em;">WITH dane_pmd AS (
     SELECT
         pr.id,
         pr.category.id category_id,
