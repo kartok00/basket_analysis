@@ -51,7 +51,7 @@
             font-size: 1.2em;
         }
         .reveal section {
-            top: -180px !important;
+            box-sizing: border-box;
         }
     </style>
 </head>
@@ -132,7 +132,7 @@
             </section>
 
             <!-- SLAJD 5: Pomysł -->
-            <section style="transform: translateY(-55px);">
+            <section style="">
                 <h2>Pomysł: Analiza koszykowa + Apriori</h2>
                 <div style="margin-top: 12px; font-size: 0.92em;">
                     <p>Do odpowiedzi na pytanie <em>„co kupują klienci razem z X?"</em> wybrano <strong>analizę koszykową (Market Basket Analysis)</strong> — metodę zaprojektowaną dokładnie do tego problemu.</p>
@@ -150,7 +150,7 @@
             </section>
 
             <!-- SLAJD 6: Przygotowanie danych -->
-            <section style="transform: translateY(-40px);">
+            <section style="">
                 <h2>Przygotowanie danych w SQL</h2>
                 <p style="font-size: 0.9em; margin-bottom: 15px;">Dwa kluczowe kroki zanim trafi do Pythona:</p>
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; font-size: 0.85em; margin-bottom: 15px;">
@@ -169,7 +169,7 @@
             </section>
 
             <!-- SLAJD 7: SQL → Python -->
-            <section style="transform: translateY(-60px);">
+            <section style="">
                                 <h2>Przeprowadzenie analizy: Python</h2>
                                 <p style="font-size: 0.85em; margin: 6px 0 8px 0;"><strong>Biblioteki:</strong> pandas, mlxtend, seaborn/matplotlib</p>
                                 <pre><code class="language-python" style="font-size: 0.46em;">basket_vertical = (df.groupby(['purchase_id', 'vertical'])['vertical']
@@ -462,11 +462,11 @@ WHERE t._partitiondate BETWEEN '2025-01-01' AND '2025-12-31'</code></pre>
             plugins: [ RevealNotes ],
             transition: 'slide',
             backgroundTransition: 'fade',
-            width: 1100,
-            height: 700,
-            margin: 0.04,
+            width: 960,
+            height: 600,
+            margin: 0.05,
             minScale: 0.2,
-            maxScale: 1.5
+            maxScale: 1.0
         });
     </script>
 </body>
