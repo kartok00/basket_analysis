@@ -198,12 +198,11 @@ care_rules = rules[
 
 result = care_rules.sort_values(by='lift', ascending=False).head(10)</code></pre>
                                 <p style="font-size: 0.72em; margin: 6px 0 4px 0;"><strong>Wynik (linijka 75: <code>result.head(10)</code>):</strong></p>
-                                <pre><code class="language-text" style="font-size: 0.58em;">antecedents         consequents      support  confidence   lift
-{HEALTH & BEAUTY}   {SUPERMARKET}    0.021      0.41      1.76
-{HEALTH & BEAUTY}   {HOME DECOR}     0.017      0.36      1.60
-{HEALTH & BEAUTY}   {KIDS}           0.014      0.29      1.22
-{HEALTH & BEAUTY}   {FASHION}        0.012      0.27      1.21
-...</code></pre>
+                                <pre><code class="language-text" style="font-size: 0.58em;">idx  antecedents          consequents                              support   confidence   lift
+16   (HEALTH & BEAUTY)    (SUPERMARKET, HOME DECORATION & OFFICE)  0.011373  0.053868     1.762872
+6    (HEALTH & BEAUTY)    (HOME DECORATION & OFFICE)               0.016954  0.080301     1.599181
+19   (HEALTH & BEAUTY)    (SUPERMARKET, KIDS)                      0.010003  0.047379     1.221506
+5    (HEALTH & BEAUTY)    (FASHION)                                0.017418  0.082495     1.205193</code></pre>
                 <div class="key-learning" style="margin-top: 4px;">
                     <strong>🎯 KEY LEARNING:</strong> Najpierw przygotuj dane w SQL, a potem w Pythonie buduj reguły i filtruj je pod pytanie biznesowe.
                 </div>
