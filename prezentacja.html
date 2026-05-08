@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analiza Koszykowa - Health & Beauty + Nivea</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/white.min.css">
+    <style>
+        .reveal h1, .reveal h2, .reveal h3 {
+            text-transform: none;
+            color: #2c3e50;
+        }
+        .reveal {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+        .reveal pre {
+            width: 100%;
+            font-size: 0.55em;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        .highlight-lift {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        .key-learning {
+            background: #ecf0f1;
+            padding: 15px;
+            border-left: 4px solid #3498db;
+            margin-top: 20px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        .warning {
+            background: #fff3cd;
+            padding: 10px;
+            border-left: 4px solid #ffc107;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+        .metric-box {
+            background: #f8f9fa;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 4px;
+            text-align: left;
+        }
+        .number {
+            color: #e74c3c;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        .reveal section {
+            top: -180px !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <!-- SLAJD 1: Tytuł -->
+            <section style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 30px 20px;">
+                <p style="font-size: 0.65em; letter-spacing: 3px; text-transform: uppercase; color: #3498db; margin: 0 0 8px 0;">Zespół 1P · Case study</p>
+                <h1 style="font-size: 2.8em; margin: 0 0 5px 0; font-weight: 700;">Analiza Koszykowa</h1>
+                <h3 style="font-weight: 300; color: #7f8c8d; margin: 0 0 20px 0; font-size: 1.1em;">Health &amp; Beauty + Nivea</h3>
+                <hr style="border: none; border-top: 2px solid #3498db; width: 80px; margin: 0 auto 25px;">
+                
+                <!-- Stonks Meme Obraz -->
+                <img src="stonks.webp" alt="Stonks" style="max-width: 380px; height: auto; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 4px 14px rgba(0,0,0,0.15);">
+                
+                <div style="max-width: 720px; margin: 0 auto;">
+                    <h2 style="font-size: 1.2em; color: #2c3e50; margin: 0; line-height: 1.35; font-weight: 600;">Co promować z Nivea&nbsp;×&nbsp;Beauty żeby generować GMV 1P?</h2>
+                    <p style="font-size: 0.8em; color: #7f8c8d; margin-top: 6px; font-style: italic;">Odpowiedź w danych, nie w intuicji</p>
+                </div>
+            </section>
+
+            <!-- SLAJD 2: Kontekst zespołu 1P -->
+            <section>
+                <h2>Zespół 1P — kontekst</h2>
+                <div style="margin-top: 12px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; font-size: 0.92em;">
+                    <div class="metric-box">
+                        <h4>🛒 Czym się zajmujemy</h4>
+                        <ul style="margin-top: 10px; font-size: 0.88em; line-height: 1.8;">
+                            <li><strong>Analizy dla kanału 1P</strong> (PL i INT)</li>
+                            <li><strong>Rekomendacje strategiczne</strong> na bazie danych</li>
+                        </ul>
+                    </div>
+                    <div class="metric-box">
+                        <h4>🤝 Partnerzy biznesu</h4>
+                        <ul style="margin-top: 10px; font-size: 0.88em; line-height: 1.8;">
+                            <li><strong>Zespoły biznesu:</strong> Kampanijne, Pricing, Supply Chain</li>
+                            <li><strong>Osoby od marek:</strong> Brand managerowie (Nivea, itd.)</li>
+                            <li><strong>Inżynierowie danych:</strong> Modele danych</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLAJD 3: Problem biznesowy -->
+            <section>
+                <h2>Problem biznesowy</h2>
+                <div style="background: #eaf4fb; border-left: 4px solid #3498db; padding: 15px; margin: 20px 0; font-size: 0.95em;">
+                    <strong>Skąd się wzięło zadanie?</strong><br>
+                    Michał — opiekun biznesowy marki Nivea — przyszedł z prośbą o zbadanie <em>kategorii cross-sellingowych</em>. Chciał wiedzieć, co klienci kupują razem z produktami Nivea, żeby mieć to jako argument w rozmowach z marką.
+                </div>
+                <h4 style="color: #3498db; margin-top: 15px;">3 pytania analityczne:</h4>
+                <ul style="margin-top: 15px; font-size: 1em;">
+                    <li>Co klienci dokładają do koszyka obok <strong>Health & Beauty</strong>?</li>
+                    <li>Co klienci dokładają obok <strong>Nivea</strong>?</li>
+                    <li>Jak te relacje zmieniają się <strong>sezonowo</strong>?</li>
+                </ul>
+                <div class="key-learning" style="margin-top: 20px;">
+                    <strong>🎯 KEY LEARNING:</strong> Dobre pytanie analityczne pochodzi od biznesu — naszą rolą jest je przekształcić w konkretny problem danych.
+                </div>
+            </section>
+
+            <!-- SLAJD 4: Ograniczenia -->
+            <section>
+                <h2>Ograniczenia danych</h2>
+                <div style="text-align: center; font-size: 1.8em; margin: 20px 0; color: #e74c3c; font-weight: bold;">
+                    ⚠️ Dane obejmują tylko <u>1P</u> — to wycinek rynku
+                </div>
+                <p style="font-size: 0.95em; margin-bottom: 15px;">1P (First Party) = transakcje realizowane bezpośrednio przez nas. <strong>Brak danych z marketplace i innych kanałów.</strong> Wnioski są prawdziwe dla naszego zakresu, ale nie należy ich generalizować na cały rynek.</p>
+                <div class="warning">
+                    <strong>⚠️ Co to znaczy w praktyce:</strong>
+                    <p>Michał dostał wnioski oparte na naszych koszykach — nie na pełnym obrazie zakupów klientów Nivea. Przy konsultacjach z marką trzeba to jasno zaznaczyć.</p>
+                </div>
+                <div class="key-learning">
+                    <strong>🎯 KEY LEARNING:</strong> Zawsze komunikuj zakres danych zanim powiesz wniosek. Biznes domyślnie zakłada, że mówisz o całym rynku.
+                </div>
+            </section>
+
+            <!-- SLAJD 5: Pomysł -->
+            <section style="transform: translateY(-55px);">
+                <h2>Pomysł: Analiza koszykowa + Apriori</h2>
+                <div style="margin-top: 12px; font-size: 0.92em;">
+                    <p>Do odpowiedzi na pytanie <em>„co kupują klienci razem z X?"</em> wybrano <strong>analizę koszykową (Market Basket Analysis)</strong> — metodę zaprojektowaną dokładnie do tego problemu.</p>
+                    <div class="metric-box" style="margin-top: 12px;">
+                        <h4>Algorytm: Apriori</h4>
+                        <ul style="font-size: 0.9em; margin-top: 10px; line-height: 1.9;">
+                            <li>Klasyczny, dobrze udokumentowany algorytm do znajdowania reguł asocjacyjnych</li>
+                            <li>Generuje reguły w formacie: <em>jeśli A → to B</em>, z metrykami <strong>lift, confidence, support</strong></li>
+                            <li>Działa na danych kategorycznych — bez potrzeby numerycznych cech</li>
+                            <li>Wynik czytelny dla biznesu: konkretne pary kategorii z siłą powiązania</li>
+                        </ul>
+                    </div>
+                    <p style="margin-top: 12px; font-size: 0.88em; color: #7f8c8d;"><strong>Ograniczenie Apriori:</strong> Wolniejszy na bardzo dużych zbiorach (eksploduje liczba reguł). Przy naszej skali 1P — bez problemu.</p>
+                </div>
+            </section>
+
+            <!-- SLAJD 6: Przygotowanie danych -->
+            <section style="transform: translateY(-40px);">
+                <h2>Przygotowanie danych w SQL</h2>
+                <p style="font-size: 0.9em; margin-bottom: 15px;">Dwa kluczowe kroki zanim trafi do Pythona:</p>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; font-size: 0.85em; margin-bottom: 15px;">
+                    <div class="metric-box">
+                        <h4>1️⃣ Usunięcie koszyków jednoproduktowych</h4>
+                        <p style="margin-top: 8px;">Apriori szuka par — koszyk z jednym produktem nie wnosi nic. Filtrujemy już w SQL przez CTE.</p>
+                    </div>
+                    <div class="metric-box">
+                        <h4>2️⃣ Dodanie kolumny sezon</h4>
+                        <p style="margin-top: 8px;">CASE WHEN na miesiącach: Summer (6–8), Winter (11–12), Other. Dzięki temu jedna tabela obsługuje wszystkie sezony.</p>
+                    </div>
+                </div>
+                <div class="key-learning" style="margin-top: 12px;">
+                    <strong>🎯 KEY LEARNING:</strong> Filtrowanie koszyków jednoproduktowych i segmentacja sezonowa w SQL oszczędzają dużo pracy w Pythonie.
+                </div>
+            </section>
+
+            <!-- SLAJD 7: SQL → Python -->
+            <section style="transform: translateY(-60px);">
+                                <h2>Przeprowadzenie analizy: Python</h2>
+                                <p style="font-size: 0.85em; margin: 6px 0 8px 0;"><strong>Biblioteki:</strong> pandas, mlxtend, seaborn/matplotlib</p>
+                                <pre><code class="language-python" style="font-size: 0.46em;">basket_vertical = (df.groupby(['purchase_id', 'vertical'])['vertical']
+                   .count().unstack().fillna(0)
+                   .astype(bool))
+
+frequent_itemsets = apriori(basket_vertical, min_support=0.01, use_colnames=True)
+rules = association_rules(frequent_itemsets, metric="lift", min_threshold=1)
+
+care_rules = rules[
+    (rules['antecedents'].apply(lambda x: len(x) == 1 and 'HEALTH & BEAUTY' in [str(i).upper() for i in x])) &
+    (rules['consequents'].apply(lambda x: 'HEALTH & BEAUTY' not in [str(i).upper() for i in x]))
+]
+
+result = care_rules.sort_values(by='lift', ascending=False).head(10)</code></pre>
+                <div class="key-learning" style="margin-top: 4px;">
+                    <strong>🎯 KEY LEARNING:</strong> Najpierw przygotuj dane w SQL, a potem w Pythonie buduj reguły i filtruj je pod pytanie biznesowe.
+                </div>
+            </section>
+
+            <!-- SLAJD 8: Słownik metryk -->
+            <section>
+                <h2>Słownik metryk</h2>
+                <div class="metric-box">
+                    <h4>Support</h4>
+                    <p>Jak często dana kombinacja produktów występuje w całym zbiorze koszyków.</p>
+                    <p style="font-size: 0.85em; color: #7f8c8d;">np. 1% wszystkich koszyków zawiera [Nivea + Sport]</p>
+                </div>
+                <div class="metric-box">
+                    <h4>Confidence</h4>
+                    <p>Jeśli ktoś kupił produkt A, jakie jest prawdopodobieństwo, że kupi produkt B?</p>
+                    <p style="font-size: 0.85em; color: #7f8c8d;">np. 60% osób kupujących Niveę kupuje też produkty z kategorii Sport</p>
+                </div>
+                <div class="metric-box">
+                    <h4>Lift</h4>
+                    <p>Czy relacja między produktami jest silniejsza niż przypadek?</p>
+                    <p style="font-size: 0.85em; color: #7f8c8d;">Lift > 1.0 = ponadprzeciętne powiązanie | Lift 1.5+ = silny sygnał</p>
+                </div>
+                <div class="key-learning">
+                    <strong>🎯 KEY LEARNING:</strong> Nigdy nie czytaj lift w izolacji — patrz na support i confidence razem.
+                </div>
+            </section>
+
+            <!-- SLAJD 9: Health & Beauty + Sezonowość + Heatmapa -->
+            <section>
+                <h2>Health & Beauty: Wyniki &amp; Sezonowość</h2>
+                <div style="margin-top: 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; font-size: 0.9em;">
+                    <div>
+                        <h4 style="color: #2c3e50; margin-bottom: 15px;">Lift by Kategoria (całoroczny):</h4>
+                        <ul style="text-align: left; line-height: 1.8;">
+                            <li>Supermarket: <span style="color: #e74c3c; font-weight: bold;">1.76</span></li>
+                            <li>Home Decor: <span style="color: #e74c3c; font-weight: bold;">1.60</span></li>
+                            <li>Kids: <span style="color: #e74c3c; font-weight: bold;">1.22</span></li>
+                            <li>Fashion: <span style="color: #e74c3c; font-weight: bold;">1.21</span></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: #2c3e50; margin-bottom: 15px;">📊 Heatmapa sezonowości:</h4>
+                        <table style="width: 100%; border-collapse: collapse; font-size: 0.85em;">
+                            <tr style="background: #ecf0f1;">
+                                <td style="border: 1px solid #bdc3c7; padding: 5px;"><strong>Kategoria</strong></td>
+                                <td style="border: 1px solid #bdc3c7; padding: 5px; text-align: center;"><strong>☀️ Summer</strong></td>
+                                <td style="border: 1px solid #bdc3c7; padding: 5px; text-align: center;"><strong>❄️ Winter</strong></td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #bdc3c7; padding: 5px;">Supermarket + Home</td>
+                                <td style="border: 1px solid #bdc3c7; padding: 5px; text-align: center; background: #e74c3c; color: white; font-weight: bold;">1.89</td>
+                                <td style="border: 1px solid #bdc3c7; padding: 5px; text-align: center; background: #f39c12; color: white;">1.12</td>
+                            </tr>
+                            <tr style="background: #f8f9fa;">
+                                <td style="border: 1px solid #bdc3c7; padding: 5px;">Home Decor</td>
+                                <td style="border: 1px solid #bdc3c7; padding: 5px; text-align: center; background: #e74c3c; color: white; font-weight: bold;">1.71</td>
+                                <td style="border: 1px solid #bdc3c7; padding: 5px; text-align: center; background: #ecf0f1;">0.98</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #bdc3c7; padding: 5px;">Kids</td>
+                                <td style="border: 1px solid #bdc3c7; padding: 5px; text-align: center; background: #f39c12; color: white;">1.30</td>
+                                <td style="border: 1px solid #bdc3c7; padding: 5px; text-align: center; background: #e74c3c; color: white; font-weight: bold;">1.45</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="warning" style="margin-top: 20px;">
+                    <strong>⚠️ Obserwacja:</strong> Latem kupują razem beauty + dom + aktywność. Zimą shift w kierunku prezentów dla dzieci. To nie izolowany koszyk beauty.
+                </div>
+                <div class="key-learning">
+                    <strong>🎯 KEY LEARNING:</strong> Heatmapa ujawnia nie tylko najsilniejsze powiązania, ale też ich zmienność sezonową — to wpływa na strategie.
+                </div>
+            </section>
+
+            <!-- SLAJD 8: Nivea + Sezonowość + Heatmapa -->
+            <section>
+                <h2>Nivea: Wyniki &amp; Sezonowość</h2>
+                <div style="margin-top: 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; font-size: 0.9em;">
+                    <div>
+                        <h4 style="color: #2c3e50; margin-bottom: 15px;">Lift by Kategoria (całoroczny):</h4>
+                        <ul style="text-align: left; line-height: 1.8;">
+                            <li>Fashion + Supermarket: <span style="color: #e74c3c; font-weight: bold;">1.26</span></li>
+                            <li>Home Decoration: <span style="color: #e74c3c; font-weight: bold;">1.13</span></li>
+                            <li>Building &amp; Industry: <span style="color: #e74c3c; font-weight: bold;">1.03</span></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: #2c3e50; margin-bottom: 15px;">📊 Heatmapa sezonowości:</h4>
+                        <table style="width: 100%; border-collapse: collapse; font-size: 0.85em;">
+                            <tr style="background: #ecf0f1;">
+                                <td style="border: 1px solid #bdc3c7; padding: 5px;"><strong>Kategoria</strong></td>
+                                <td style="border: 1px solid #bdc3c7; padding: 5px; text-align: center;"><strong>☀️ Summer</strong></td>
+                                <td style="border: 1px solid #bdc3c7; padding: 5px; text-align: center;"><strong>❄️ Winter</strong></td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #bdc3c7; padding: 5px;">Sport &amp; Leisure</td>
+                                <td style="border: 1px solid #bdc3c7; padding: 5px; text-align: center; background: #e74c3c; color: white; font-weight: bold;">1.56</td>
+                                <td style="border: 1px solid #bdc3c7; padding: 5px; text-align: center; background: #f8f9fa;">0.87</td>
+                            </tr>
+                            <tr style="background: #f8f9fa;">
+                                <td style="border: 1px solid #bdc3c7; padding: 5px;">Fashion</td>
+                                <td style="border: 1px solid #bdc3c7; padding: 5px; text-align: center; background: #f39c12; color: white;">1.15</td>
+                                <td style="border: 1px solid #bdc3c7; padding: 5px; text-align: center; background: #e74c3c; color: white; font-weight: bold;">1.37</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #bdc3c7; padding: 5px;">Garden</td>
+                                <td style="border: 1px solid #bdc3c7; padding: 5px; text-align: center; background: #f39c12; color: white;">1.21</td>
+                                <td style="border: 1px solid #bdc3c7; padding: 5px; text-align: center; background: #ecf0f1;">0.92</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="warning" style="margin-top: 20px;">
+                    <strong>⚠️ Obserwacja:</strong> Latem Nivea = ochrona słoneczna (Sport 1.56). Zimą shift do pielęgnacji + fashion. Całoroczna analiza ukrywa sezonowe scenariusze.
+                </div>
+                <div class="key-learning">
+                    <strong>🎯 KEY LEARNING:</strong> Rozproszone wyniki całoroczne mogą ukrywać mocne sezonowe insights — zawsze segmentuj.
+                </div>
+            </section>
+
+            <!-- SLAJD 9: Błędy analityczne -->
+            <section>
+                <h2>Najczęstsze błędy analityczne</h2>
+                <div class="warning">
+                    <strong>❌ Nadinterpretacja lifta</strong>
+                    <p>Lift 1.03 to niemal przypadek. Musisz > 1.2 żeby mówić o relacji.</p>
+                </div>
+                <div class="warning">
+                    <strong>❌ Ignorowanie support i confidence</strong>
+                    <p>Lift sam nie mówi ci, czy to warte działania biznesowego.</p>
+                </div>
+                <div class="warning">
+                    <strong>❌ Brak komunikacji ograniczeń danych</strong>
+                    <p>Jeśli nie powiesz że to 1P, biznes będzie działać na pełnym rynku.</p>
+                </div>
+                <div class="warning">
+                    <strong>❌ Ignorowanie sezonowości w całorocznej analizie</strong>
+                    <p>Rozproszone wyniki to sygnał — zawsze segmentuj dane przed wnioskowaniem.</p>
+                </div>
+                <div class="key-learning">
+                    <strong>🎯 KEY LEARNING:</strong> Jako analityk jesteś odpowiedzialny za to, że wyniki są prawidłowo zinterpretowane.
+                </div>
+            </section>
+
+            <!-- SLAJD 11: Efekt biznesowy -->
+            <section>
+                <h2>Efekt biznesowy</h2>
+                <div style="text-align: center; margin-top: 15px;">
+                    <h3 style="color: #27ae60;">✓ Po konsultacji Michała z Niveą:</h3>
+                    <h2 style="color: #e74c3c; margin-top: 10px;">Start letniego mix brand selling</h2>
+                </div>
+                <div style="margin-top: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; font-size: 0.9em;">
+                    <div class="metric-box">
+                        <h4>Co przesądziło:</h4>
+                        <ul>
+                            <li>Lift 1.56 do sportu latem — silny sygnał z heatmapy</li>
+                            <li>Potencjał incremental GMV</li>
+                            <li>Testowanie na ograniczonej skali = niskie ryzyko</li>
+                        </ul>
+                    </div>
+                    <div class="metric-box">
+                        <h4>Wartość dla Michała:</h4>
+                        <ul>
+                            <li>Miał <strong>własne dane analityczne</strong> do rozmowy z Niveą</li>
+                            <li>Nie musiał opierać się tylko na materiałach marki</li>
+                            <li>Negocjował z pozycji wiedzy, nie intuicji</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="key-learning">
+                    <strong>🎯 KEY LEARNING:</strong> Rola analityka 1P — dostarczyć biznesowi niezależne źródło wiedzy, zanim siądzie do rozmów z partnerem.
+                </div>
+            </section>
+
+            <!-- SLAJD 12: Materiały do zabrania -->
+            <section>
+                <h2>Materiały do zabrania</h2>
+                <div style="margin-top: 25px; display: grid; grid-template-columns: 1fr 1fr; gap: 25px; font-size: 0.88em;">
+                    <div class="metric-box">
+                        <h4>💻 Notebook (Python)</h4>
+                        <p style="margin-top: 8px; font-size: 0.85em;">Pełny flow analizy:</p>
+                        <ul style="margin-top: 8px; font-size: 0.82em; line-height: 1.7;">
+                            <li>One-hot encoding</li>
+                            <li>Apriori + rules</li>
+                            <li>Heatmapy sezonowe</li>
+                            <li>Barploty lift-ów</li>
+                        </ul>
+                        <p style="margin-top: 12px; font-size: 0.82em; color: #3498db;"><strong>📁 basket_analysis.ipynb</strong></p>
+                    </div>
+                    <div class="metric-box">
+                        <h4>📄 Wyniki (raport)</h4>
+                        <p style="margin-top: 8px; font-size: 0.85em;">Tabele + rekomendacje:</p>
+                        <ul style="margin-top: 8px; font-size: 0.82em; line-height: 1.7;">
+                            <li>Reguły (lift + support)</li>
+                            <li>Heatmapy H&amp;B + Nivea</li>
+                            <li>Wnioski działaniowe</li>
+                        </ul>
+                        <p style="margin-top: 12px; font-size: 0.82em; color: #3498db;"><strong>📁 wyniki_analiza_koszykowa.pdf</strong></p>
+                    </div>
+                </div>
+                <h4 style="margin-top: 18px; color: #2c3e50;">SQL — kluczowy query:</h4>
+                                <pre><code class="language-sql" style="font-size: 0.38em;">WITH dane_pmd AS (
+    SELECT
+        pr.id,
+        pr.category.id category_id,
+        pr.parameters
+    FROM `sc-6014-pmd-prod.pmd.products` pr
+    WHERE _partitiondate = current_date - 1
+),
+marki AS (
+    SELECT DISTINCT id attrib_id
+    FROM `sc-5470-flp-prod.flp_prod.parameters_dump_v6`
+    WHERE _partitiondate = current_date - 1
+        AND 'isBrand' IN UNNEST(options)
+),
+brand_pmd AS (
+    SELECT DISTINCT
+        dp.id,
+        at_val.value AS brand
+    FROM dane_pmd dp
+    LEFT JOIN UNNEST(parameters) atrybuty
+    LEFT JOIN UNNEST(atrybuty.values) at_val
+    JOIN marki m ON m.attrib_id = atrybuty.id
+    QUALIFY ROW_NUMBER() OVER (PARTITION BY dp.id ORDER BY at_val.value ASC NULLS LAST) = 1
+),
+filtered_transactions AS (
+    SELECT `order_purchase_id_list`[SAFE_OFFSET(0)].purchase_id AS trans_id
+    FROM `sc-9369-dataengineering-prod.orders.enriched_daily_orders` o
+    JOIN `sc-16612-mall-analytics-prod.g1p_dicts.sellers` d ON o.seller_id = d.seller_id
+    WHERE _partitiondate BETWEEN '2025-01-01' AND '2025-12-31'
+        AND seller_type = '1P PL'
+    GROUP BY 1
+    HAVING COUNT(DISTINCT product_id) > 1
+)
+SELECT
+    t.`order_purchase_id_list`[SAFE_OFFSET(0)].purchase_id,
+    t.product_id,
+    COALESCE(UPPER(brand), 'UNKNOWN') AS brand,
+    UPPER(new_meta) AS vertical,
+    CASE
+        WHEN EXTRACT(MONTH FROM t._partitiondate) IN (6,7,8) THEN 'Summer'
+        WHEN EXTRACT(MONTH FROM t._partitiondate) IN (11,12) THEN 'Winter'
+        ELSE 'Other'
+    END AS season
+FROM `sc-9369-dataengineering-prod.orders.enriched_daily_orders` t
+JOIN filtered_transactions f ON t.`order_purchase_id_list`[SAFE_OFFSET(0)].purchase_id = f.trans_id
+LEFT JOIN `sc-5470-flp-prod.flp_prod.budget_category_tree_actual_year_permanent` dc
+    ON t.assortment_category_id = dc.ca_id_leaf
+LEFT JOIN brand_pmd bp ON t.product_id = bp.id
+WHERE t._partitiondate BETWEEN '2025-01-01' AND '2025-12-31'</code></pre>
+            </section>
+
+            <!-- SLAJD 13: 5 rzeczy do zapamiętania -->
+            <section>
+                <h2>5 rzeczy do zapamiętania</h2>
+                <div style="margin-top: 30px; font-size: 0.95em; text-align: left; line-height: 2.5;">
+                    <p><span style="background: #e74c3c; color: white; padding: 2px 8px; border-radius: 3px; margin-right: 10px;">1</span> Lift 1.5+ to silny sygnał; poniżej 1.2 to brak silnego powiązania</p>
+                    <p><span style="background: #e74c3c; color: white; padding: 2px 8px; border-radius: 3px; margin-right: 10px;">2</span> Zawsze patrzcie sezonowo — całoroczna analiza ukrywa wzorce</p>
+                    <p><span style="background: #e74c3c; color: white; padding: 2px 8px; border-radius: 3px; margin-right: 10px;">3</span> Komunikujcie ograniczenia (1P nie równa się rynek)</p>
+                    <p><span style="background: #e74c3c; color: white; padding: 2px 8px; border-radius: 3px; margin-right: 10px;">4</span> SQL to fundament — duza czesc pracy to przygotowanie</p>
+                    <p><span style="background: #e74c3c; color: white; padding: 2px 8px; border-radius: 3px; margin-right: 10px;">5</span> Naszą rolą jest dostarczać niezależne dane do biznesowych decyzji</p>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/notes/notes.min.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            slideNumber: true,
+            plugins: [ RevealNotes ],
+            transition: 'slide',
+            backgroundTransition: 'fade'
+        });
+    </script>
+</body>
+</html>
