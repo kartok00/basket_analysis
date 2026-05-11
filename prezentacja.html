@@ -283,32 +283,36 @@ result = care_rules.sort_values(by='lift', ascending=False).head(10)</code></pre
                     </div>
                     <div>
                         <h4 style="color: #2c3e50; margin-bottom: 15px;">📊 Heatmapa sezonowości:</h4>
-                        <table style="width: 100%; border-collapse: collapse; font-size: 0.85em;">
+                        <table style="width: 100%; border-collapse: collapse; font-size: 0.82em;">
                             <tr style="background: #ecf0f1;">
-                                <td style="border: 1px solid #bdc3c7; padding: 5px;"><strong>Kategoria</strong></td>
-                                <td style="border: 1px solid #bdc3c7; padding: 5px; text-align: center;"><strong>☀️ Summer</strong></td>
-                                <td style="border: 1px solid #bdc3c7; padding: 5px; text-align: center;"><strong>❄️ Winter</strong></td>
+                                <td style="border: 1px solid #bdc3c7; padding: 4px;"><strong>Kategoria</strong></td>
+                                <td style="border: 1px solid #bdc3c7; padding: 4px; text-align: center;"><strong>☀️ Summer</strong></td>
+                                <td style="border: 1px solid #bdc3c7; padding: 4px; text-align: center;"><strong>❄️ Winter</strong></td>
+                                <td style="border: 1px solid #bdc3c7; padding: 4px; text-align: center;"><strong>🍂 Other</strong></td>
                             </tr>
                             <tr>
-                                <td style="border: 1px solid #bdc3c7; padding: 5px;">Supermarket + Home</td>
-                                <td style="border: 1px solid #bdc3c7; padding: 5px; text-align: center; background: #e74c3c; color: white; font-weight: bold;">1.89</td>
-                                <td style="border: 1px solid #bdc3c7; padding: 5px; text-align: center; background: #f39c12; color: white;">1.12</td>
+                                <td style="border: 1px solid #bdc3c7; padding: 4px;">Supermarket + Home</td>
+                                <td style="border: 1px solid #bdc3c7; padding: 4px; text-align: center; background: #e74c3c; color: white; font-weight: bold;">1.893</td>
+                                <td style="border: 1px solid #bdc3c7; padding: 4px; text-align: center; background: #e74c3c; color: white; font-weight: bold;">1.676</td>
+                                <td style="border: 1px solid #bdc3c7; padding: 4px; text-align: center; background: #e74c3c; color: white; font-weight: bold;">1.802</td>
                             </tr>
                             <tr style="background: #f8f9fa;">
-                                <td style="border: 1px solid #bdc3c7; padding: 5px;">Home Decor</td>
-                                <td style="border: 1px solid #bdc3c7; padding: 5px; text-align: center; background: #e74c3c; color: white; font-weight: bold;">1.71</td>
-                                <td style="border: 1px solid #bdc3c7; padding: 5px; text-align: center; background: #ecf0f1;">0.98</td>
+                                <td style="border: 1px solid #bdc3c7; padding: 4px;">Home Decoration</td>
+                                <td style="border: 1px solid #bdc3c7; padding: 4px; text-align: center; background: #e74c3c; color: white; font-weight: bold;">1.797</td>
+                                <td style="border: 1px solid #bdc3c7; padding: 4px; text-align: center; background: #e74c3c; color: white; font-weight: bold;">1.413</td>
+                                <td style="border: 1px solid #bdc3c7; padding: 4px; text-align: center; background: #e74c3c; color: white; font-weight: bold;">1.679</td>
                             </tr>
                             <tr>
-                                <td style="border: 1px solid #bdc3c7; padding: 5px;">Kids</td>
-                                <td style="border: 1px solid #bdc3c7; padding: 5px; text-align: center; background: #f39c12; color: white;">1.30</td>
-                                <td style="border: 1px solid #bdc3c7; padding: 5px; text-align: center; background: #e74c3c; color: white; font-weight: bold;">1.45</td>
+                                <td style="border: 1px solid #bdc3c7; padding: 4px;">Fashion</td>
+                                <td style="border: 1px solid #bdc3c7; padding: 4px; text-align: center; background: #f39c12; color: white;">1.204</td>
+                                <td style="border: 1px solid #bdc3c7; padding: 4px; text-align: center; background: #f39c12; color: white;">1.194</td>
+                                <td style="border: 1px solid #bdc3c7; padding: 4px; text-align: center; background: #f39c12; color: white;">1.184</td>
                             </tr>
                         </table>
                     </div>
                 </div>
                 <div class="warning" style="margin-top: 20px;">
-                    <strong>⚠️ Obserwacja:</strong> Latem kupują razem beauty + dom + aktywność. Zimą shift w kierunku prezentów dla dzieci. To nie izolowany koszyk beauty.
+                    <strong>⚠️ Obserwacja:</strong> Supermarket+Home dominuje sezonowo (Summer 1.89, Winter 1.68, Other 1.80). Home Decor stabilnie ~1.7 niezależnie od sezonu = bazowa relacja H&B. Winter wnosi Electronics 1.06 (efekt prezentów). Sezonowość ujawnia sprzedażowe okienka.
                 </div>
                 <div class="key-learning">
                     <strong>🎯 KEY LEARNING:</strong> Heatmapa ujawnia nie tylko najsilniejsze powiązania, ale też ich zmienność sezonową — to wpływa na strategie.
@@ -329,32 +333,42 @@ result = care_rules.sort_values(by='lift', ascending=False).head(10)</code></pre
                     </div>
                     <div>
                         <h4 style="color: #2c3e50; margin-bottom: 15px;">📊 Heatmapa sezonowości:</h4>
-                        <table style="width: 100%; border-collapse: collapse; font-size: 0.85em;">
+                        <table style="width: 100%; border-collapse: collapse; font-size: 0.82em;">
                             <tr style="background: #ecf0f1;">
-                                <td style="border: 1px solid #bdc3c7; padding: 5px;"><strong>Kategoria</strong></td>
-                                <td style="border: 1px solid #bdc3c7; padding: 5px; text-align: center;"><strong>☀️ Summer</strong></td>
-                                <td style="border: 1px solid #bdc3c7; padding: 5px; text-align: center;"><strong>❄️ Winter</strong></td>
+                                <td style="border: 1px solid #bdc3c7; padding: 4px;"><strong>Kategoria</strong></td>
+                                <td style="border: 1px solid #bdc3c7; padding: 4px; text-align: center;"><strong>☀️ Summer</strong></td>
+                                <td style="border: 1px solid #bdc3c7; padding: 4px; text-align: center;"><strong>❄️ Winter</strong></td>
+                                <td style="border: 1px solid #bdc3c7; padding: 4px; text-align: center;"><strong>🍂 Other</strong></td>
                             </tr>
                             <tr>
-                                <td style="border: 1px solid #bdc3c7; padding: 5px;">Sport &amp; Leisure</td>
-                                <td style="border: 1px solid #bdc3c7; padding: 5px; text-align: center; background: #e74c3c; color: white; font-weight: bold;">1.56</td>
-                                <td style="border: 1px solid #bdc3c7; padding: 5px; text-align: center; background: #f8f9fa;">0.87</td>
+                                <td style="border: 1px solid #bdc3c7; padding: 4px;">Sport &amp; Leisure</td>
+                                <td style="border: 1px solid #bdc3c7; padding: 4px; text-align: center; background: #e74c3c; color: white; font-weight: bold;">1.555</td>
+                                <td style="border: 1px solid #bdc3c7; padding: 4px; text-align: center; background: #ecf0f1;">1.034</td>
+                                <td style="border: 1px solid #bdc3c7; padding: 4px; text-align: center; background: #ecf0f1;">—</td>
                             </tr>
                             <tr style="background: #f8f9fa;">
-                                <td style="border: 1px solid #bdc3c7; padding: 5px;">Fashion</td>
-                                <td style="border: 1px solid #bdc3c7; padding: 5px; text-align: center; background: #f39c12; color: white;">1.15</td>
-                                <td style="border: 1px solid #bdc3c7; padding: 5px; text-align: center; background: #e74c3c; color: white; font-weight: bold;">1.37</td>
+                                <td style="border: 1px solid #bdc3c7; padding: 4px;">Fashion</td>
+                                <td style="border: 1px solid #bdc3c7; padding: 4px; text-align: center; background: #f39c12; color: white;">1.090</td>
+                                <td style="border: 1px solid #bdc3c7; padding: 4px; text-align: center; background: #e74c3c; color: white; font-weight: bold;">1.368</td>
+                                <td style="border: 1px solid #bdc3c7; padding: 4px; text-align: center; background: #f39c12; color: white;">1.024</td>
                             </tr>
                             <tr>
-                                <td style="border: 1px solid #bdc3c7; padding: 5px;">Garden</td>
-                                <td style="border: 1px solid #bdc3c7; padding: 5px; text-align: center; background: #f39c12; color: white;">1.21</td>
-                                <td style="border: 1px solid #bdc3c7; padding: 5px; text-align: center; background: #ecf0f1;">0.92</td>
+                                <td style="border: 1px solid #bdc3c7; padding: 4px;">Garden</td>
+                                <td style="border: 1px solid #bdc3c7; padding: 4px; text-align: center; background: #f39c12; color: white;">1.209</td>
+                                <td style="border: 1px solid #bdc3c7; padding: 4px; text-align: center; background: #ecf0f1;">—</td>
+                                <td style="border: 1px solid #bdc3c7; padding: 4px; text-align: center; background: #ecf0f1;">—</td>
+                            </tr>
+                            <tr style="background: #f8f9fa;">
+                                <td style="border: 1px solid #bdc3c7; padding: 4px;">Home Decoration</td>
+                                <td style="border: 1px solid #bdc3c7; padding: 4px; text-align: center; background: #ecf0f1;">1.088</td>
+                                <td style="border: 1px solid #bdc3c7; padding: 4px; text-align: center; background: #f39c12; color: white;">1.069</td>
+                                <td style="border: 1px solid #bdc3c7; padding: 4px; text-align: center; background: #f39c12; color: white;">1.186</td>
                             </tr>
                         </table>
                     </div>
                 </div>
                 <div class="warning" style="margin-top: 20px;">
-                    <strong>⚠️ Obserwacja:</strong> Latem Nivea = ochrona słoneczna (Sport 1.56). Zimą shift do pielęgnacji + fashion. Całoroczna analiza ukrywa sezonowe scenariusze.
+                    <strong>⚠️ Obserwacja:</strong> Summer: Sport 1.56 (najwyższy!) + Garden 1.21 = strategia letnia: ochrona słoneczna. Winter: Fashion 1.37 (wzrost!) + Home 1.07 = zimowa pielęgnacja + moda. Other: Home 1.19 dominuje (biuro). Całoroczna średnia 1.26 ukrywa koniec danych — segmentacja pokazuje gdzie pieniądze.
                 </div>
                 <div class="key-learning">
                     <strong>🎯 KEY LEARNING:</strong> Rozproszone wyniki całoroczne mogą ukrywać mocne sezonowe insights — zawsze segmentuj.
