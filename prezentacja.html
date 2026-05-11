@@ -180,7 +180,30 @@
                 </div>
             </section>
 
-            <!-- SLAJD 7: SQL → Python -->
+            <!-- SLAJD 7: Słownik metryk -->
+            <section>
+                <h2>Słownik metryk</h2>
+                <div class="metric-box">
+                    <h4>Support</h4>
+                    <p>Jak często dana kombinacja produktów występuje w całym zbiorze koszyków.</p>
+                    <p style="font-size: 0.85em; color: #7f8c8d;">np. 1% wszystkich koszyków zawiera [Nivea + Sport]</p>
+                </div>
+                <div class="metric-box">
+                    <h4>Confidence</h4>
+                    <p>Jeśli ktoś kupił produkt A, jakie jest prawdopodobieństwo, że kupi produkt B?</p>
+                    <p style="font-size: 0.85em; color: #7f8c8d;">np. 60% osób kupujących Niveę kupuje też produkty z kategorii Sport</p>
+                </div>
+                <div class="metric-box">
+                    <h4>Lift</h4>
+                    <p>Czy relacja między produktami jest silniejsza niż przypadek?</p>
+                    <p style="font-size: 0.85em; color: #7f8c8d;">Lift > 1.0 = ponadprzeciętne powiązanie | Lift 1.5+ = silny sygnał</p>
+                </div>
+                <div class="key-learning">
+                    <strong>🎯 KEY LEARNING:</strong> Nigdy nie czytaj lift w izolacji — patrz na support i confidence razem.
+                </div>
+            </section>
+
+            <!-- SLAJD 8: SQL → Python -->
             <section style="">
                                 <h2>Przeprowadzenie analizy: Python</h2>
                                 <p style="font-size: 0.85em; margin: 6px 0 8px 0;"><strong>Biblioteki:</strong> pandas, mlxtend, seaborn/matplotlib</p>
@@ -242,29 +265,6 @@ result = care_rules.sort_values(by='lift', ascending=False).head(10)</code></pre
                                 </table>
                 <div class="key-learning" style="margin-top: 4px;">
                     <strong>🎯 KEY LEARNING:</strong> Najpierw przygotuj dane w SQL, a potem w Pythonie buduj reguły i filtruj je pod pytanie biznesowe.
-                </div>
-            </section>
-
-            <!-- SLAJD 8: Słownik metryk -->
-            <section>
-                <h2>Słownik metryk</h2>
-                <div class="metric-box">
-                    <h4>Support</h4>
-                    <p>Jak często dana kombinacja produktów występuje w całym zbiorze koszyków.</p>
-                    <p style="font-size: 0.85em; color: #7f8c8d;">np. 1% wszystkich koszyków zawiera [Nivea + Sport]</p>
-                </div>
-                <div class="metric-box">
-                    <h4>Confidence</h4>
-                    <p>Jeśli ktoś kupił produkt A, jakie jest prawdopodobieństwo, że kupi produkt B?</p>
-                    <p style="font-size: 0.85em; color: #7f8c8d;">np. 60% osób kupujących Niveę kupuje też produkty z kategorii Sport</p>
-                </div>
-                <div class="metric-box">
-                    <h4>Lift</h4>
-                    <p>Czy relacja między produktami jest silniejsza niż przypadek?</p>
-                    <p style="font-size: 0.85em; color: #7f8c8d;">Lift > 1.0 = ponadprzeciętne powiązanie | Lift 1.5+ = silny sygnał</p>
-                </div>
-                <div class="key-learning">
-                    <strong>🎯 KEY LEARNING:</strong> Nigdy nie czytaj lift w izolacji — patrz na support i confidence razem.
                 </div>
             </section>
 
